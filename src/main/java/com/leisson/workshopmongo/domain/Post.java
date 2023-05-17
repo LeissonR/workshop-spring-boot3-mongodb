@@ -9,6 +9,7 @@ import java.util.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.leisson.workshopmongo.dto.AuthorDTO;
 import com.leisson.workshopmongo.dto.CommentDTO;
 
@@ -18,6 +19,7 @@ public class Post implements Serializable{
 	
 	@Id
 	private String id;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT")
 	private Date date;
 	private String title;
 	private String body;
